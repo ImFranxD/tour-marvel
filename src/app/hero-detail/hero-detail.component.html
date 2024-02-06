@@ -1,0 +1,10 @@
+<div *ngIf="hero">
+  <h2>{{hero.name | uppercase}}</h2>
+  <div><span>id: </span>{{hero.id}}</div>
+  <div><span>Comics disponibles: </span>{{hero.comics.available}}</div>
+  <div>
+    <img src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}" alt="">
+  </div>
+  <button type="button" (click)="goBack()">go back</button>
+  <button type="button" (click)="save()">save</button>
+</div>
