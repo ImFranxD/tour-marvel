@@ -11,7 +11,7 @@ import { MessageService } from './message.service';
 @Injectable({ providedIn: 'root' })
 export class HeroService {
 
-  private heroesUrl = 'https://gateway.marvel.com:443/v1/public/characters?apikey=9cc49f4048542149eddd5feeed1ee35c&hash=e0f934ca6e088860a85a09bed76829a2&ts=spiderman';  // URL to web api
+  private heroesUrl = 'https://gateway.marvel.com:443/v1/public/characters?ts=patata&apikey=443829b9ac9c57ff2b6964125b93b81c&hash=40ddafed4cf1f248913dd4bab8177d3a';  // URL to web api
   private searchURL = 'https://gateway.marvel.com:443/v1/public/characters';
   private idURL = "https://gateway.marvel.com:443/v1/public/characters/";
   number: number = 0;
@@ -27,17 +27,17 @@ export class HeroService {
 
   getHeroes(): Observable<Hero[]> {
     this.number = Math.floor(Math.random() * Math.floor(1550));
-    return this.http.get<Hero[]>(`${this.searchURL}?offset=${this.number}&ts=spiderman&apikey=9cc49f4048542149eddd5feeed1ee35c&hash=e0f934ca6e088860a85a09bed76829a2`)
+    return this.http.get<Hero[]>(`${this.searchURL}?offset=${this.number}&ts=patata&apikey=443829b9ac9c57ff2b6964125b93b81c&hash=40ddafed4cf1f248913dd4bab8177d3a`)
       .pipe(map((data: any) => data.data.results));
   }
 
   getHeroeList(term: number): Observable<Hero[]> {
-    return this.http.get<Hero[]>(`${this.searchURL}?offset=${term}&ts=spiderman&apikey=9cc49f4048542149eddd5feeed1ee35c&hash=e0f934ca6e088860a85a09bed76829a2`)
+    return this.http.get<Hero[]>(`${this.searchURL}?offset=${term}&ts=patata&apikey=443829b9ac9c57ff2b6964125b93b81c&hash=40ddafed4cf1f248913dd4bab8177d3a`)
       .pipe(map((data: any) => data.data.results));
   }
 
   getHeroNo404<Data>(id: number): Observable<Hero> {
-    const url = `${this.idURL}${id}?ts=spiderman&apikey=9cc49f4048542149eddd5feeed1ee35c&hash=e0f934ca6e088860a85a09bed76829a2`;
+    const url = `${this.idURL}${id}?ts=patata&apikey=443829b9ac9c57ff2b6964125b93b81c&hash=40ddafed4cf1f248913dd4bab8177d3a`;
     return this.http.get<Hero[]>(url)
       .pipe(
         map(heroes => heroes[0]),
@@ -50,7 +50,7 @@ export class HeroService {
   }
 
   getHeroById(id: number): Observable<Hero> {
-    const url = `${this.idURL}${id}?ts=spiderman&apikey=9cc49f4048542149eddd5feeed1ee35c&hash=e0f934ca6e088860a85a09bed76829a2`;
+    const url = `${this.idURL}${id}?ts=patata&apikey=443829b9ac9c57ff2b6964125b93b81c&hash=40ddafed4cf1f248913dd4bab8177d3a`;
     return this.http.get<Hero>(url)
     .pipe(map((data: any) => data.data.results[0]));
   }
@@ -59,7 +59,7 @@ export class HeroService {
     if (!term.trim()) {
       return of([]);
     }
-    return this.http.get<Hero[]>(`${this.searchURL}?nameStartsWith=${term}&ts=spiderman&apikey=9cc49f4048542149eddd5feeed1ee35c&hash=e0f934ca6e088860a85a09bed76829a2`).pipe(
+    return this.http.get<Hero[]>(`${this.searchURL}?nameStartsWith=${term}&ts=patata&apikey=443829b9ac9c57ff2b6964125b93b81c&hash=40ddafed4cf1f248913dd4bab8177d3a`).pipe(
       map((data: any) => data.data.results),
       tap(x => x.length ?
         this.log(`found heroes matching "${term}"`) :
