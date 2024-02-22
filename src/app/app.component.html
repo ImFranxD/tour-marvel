@@ -1,5 +1,4 @@
 <head>
-  <!-- ... otras etiquetas head ... -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
 </head>
 <header class="mb-8 mt-12 text-center">
@@ -7,6 +6,7 @@
   <nav class="flex justify-center">
     <a href="/dashboard" class="btn-nav btn-nav-blue hover:bg-blue-700 rounded-full py-3 px-8 text-xl">Dashboard</a>
     <a href="/heroes" class="btn-nav btn-nav-blue ml-4 hover:bg-blue-700 rounded-full py-3 px-8 text-xl">Heroes</a>
+    <button type="button" class="btn-nav btn-nav-blue ml-4 hover:bg-blue-700 rounded-full py-3 px-8 text-xl" (click)="toggleDarkMode()">Modo Oscuro</button>
   </nav>
 </header>
 

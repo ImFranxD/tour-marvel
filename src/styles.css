@@ -1,3 +1,9 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+body.dark-mode {
+    background-color: #1a202c; /* Color de fondo oscuro */
+    color: #cbd5e0; /* Color de texto claro */
+    /* Otros estilos oscuros... */
+  }
