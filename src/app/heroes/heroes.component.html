@@ -1,24 +1,27 @@
-<h2>My Heroes</h2>
+<div class="mt-8 p-6 bg-gray-200 border border-gray-300 rounded shadow-md">
+  <h2 class="text-xl font-bold mb-4 text-gray-800">My Heroes</h2>
 
-<div>
-  <label for="new-hero">Hero name: </label>
-  <input id="new-hero" #heroName />
+  <div class="mb-4 flex items-center">
+    <label for="new-hero" class="block text-gray-700">Hero name:</label>
+    <input id="new-hero" #heroName class="p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" />
+    <button type="button" class="add-button bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded ml-2" (click)="add(heroName.value); heroName.value=''">
+      Add hero
+    </button>
+  </div>
 
-  <button type="button" class="add-button" (click)="add(heroName.value); heroName.value=''">
-    Add hero
-  </button>
+  <ul class="heroes">
+    <li *ngFor="let hero of heroes" class="flex items-center justify-between border-b border-gray-300 py-2">
+      <a routerLink="/detail/{{hero.id}}" class="flex items-center">
+        <span class="badge bg-blue-500 text-white px-2 py-1 mr-2">{{hero.id}}</span> {{hero.name}}
+      </a>
+      <button type="button" class="delete text-red-500 hover:text-red-700" title="delete hero" (click)="delete(hero)">x</button>
+    </li>
+  </ul>
+
+  <ul class="pagination mt-4 flex">
+    <li class="mr-2"><a class="text-blue-500 hover:underline" (click)="getHeroesBack()">❮</a></li>
+    <li><a class="text-blue-500 hover:underline" (click)="getHeroesNext()">❯</a></li>
+  </ul>
 </div>
 
-<ul class="heroes">
-  <li *ngFor="let hero of heroes">
-    <a routerLink="/detail/{{hero.id}}">
-      <span class="badge">{{hero.id}}</span> {{hero.name}}
-    </a>
-    <button type="button" class="delete" title="delete hero" (click)="delete(hero)">x</button>
-  </li>
-</ul>
 
-<ul class="pagination">
-  <li><a (click)="getHeroesBack()">❮</a></li>
-  <li><a (click)="getHeroesNext()">❯</a></li>
-</ul>

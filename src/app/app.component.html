@@ -1,7 +1,14 @@
-<h1>{{title}}</h1>
-<nav>
-  <a routerLink="/dashboard">Dashboard</a>
-  <a routerLink="/heroes">Heroes</a>
-</nav>
+<head>
+  <!-- ... otras etiquetas head ... -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+</head>
+<header class="mb-8 mt-12 text-center">
+  <h1 class="text-5xl font-extrabold custom-title mb-4">Marvel Heroes</h1>
+  <nav class="flex justify-center">
+    <a href="/dashboard" class="btn-nav btn-nav-blue hover:bg-blue-700 rounded-full py-3 px-8 text-xl">Dashboard</a>
+    <a href="/heroes" class="btn-nav btn-nav-blue ml-4 hover:bg-blue-700 rounded-full py-3 px-8 text-xl">Heroes</a>
+  </nav>
+</header>
+
 <router-outlet></router-outlet>
 <app-messages></app-messages>

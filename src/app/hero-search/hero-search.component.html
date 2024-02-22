@@ -1,12 +1,13 @@
-<div id="search-component">
-  <label for="search-box">Hero Search</label>
-  <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+<div id="search-component" class="text-center mt-8">
+  <label for="search-box" class="block text-xl font-bold mb-2">Hero Search</label>
+  <input #searchBox id="search-box" class="p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" (input)="search(searchBox.value)" />
 
-  <ul class="search-result">
-    <li *ngFor="let hero of heroes$ | async" >
-      <a routerLink="/detail/{{hero.id}}">
+  <ul class="search-result mt-4">
+    <li *ngFor="let hero of heroes$ | async" class="mb-2">
+      <a routerLink="/detail/{{hero.id}}" class="text-blue-500 hover:underline">
         {{hero.name}}
       </a>
     </li>
   </ul>
 </div>
+

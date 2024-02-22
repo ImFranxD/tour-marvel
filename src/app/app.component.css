@@ -1,19 +1,28 @@
-h1 {
-  margin-bottom: 0;
+.custom-title {
+  font-family: 'Montserrat', sans-serif; /* Cambia a Montserrat o la fuente que prefieras */
+  font-weight: 700; /* Puedes ajustar el peso de la fuente según tus preferencias */
+  color: #EF4444; /* Puedes ajustar el color según tus preferencias */
 }
-nav a {
-  padding: 1rem;
+
+.btn-nav {
+  padding: 10px 20px;
+  border-radius: 999px; /* Usa un valor alto para hacer bordes redondos */
+  font-family: 'Montserrat', sans-serif; /* Puedes cambiar a la fuente que prefieras */
+  font-weight: 700; /* Puedes ajustar el peso de la fuente según tus preferencias */
   text-decoration: none;
-  margin-top: 10px;
-  display: inline-block;
-  background-color: #e8e8e8;
-  color: #3d3d3d;
-  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
-nav a:hover {
-  color: white;
-  background-color: #42545C;
+
+.btn-nav-blue {
+  background-color: #4299e1; /* Color azul */
+  color: #fff; /* Texto blanco */
 }
-nav a.active {
-  background-color: black;
+
+.btn-nav-green {
+  background-color: #48bb78; /* Color verde */
+  color: #fff; /* Texto blanco */
+}
+
+.btn-nav:hover {
+  background-color: #4f4f4f; /* Cambio de color al pasar el ratón */
 }

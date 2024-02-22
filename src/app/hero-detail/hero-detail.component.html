@@ -1,10 +1,12 @@
-<div *ngIf="hero">
-  <h2>{{hero.name | uppercase}}</h2>
-  <div><span>id: </span>{{hero.id}}</div>
-  <div><span>Comics disponibles: </span>{{hero.comics.available}}</div>
-  <div>
-    <img src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}" alt="">
+<div *ngIf="hero" class="mt-8 p-6 bg-gray-100 border border-gray-300 rounded shadow-md">
+  <h2 class="text-xl font-bold mb-4 text-blue-500">{{hero.name | uppercase}}</h2>
+  <div class="mb-2"><span class="font-semibold">ID:</span> {{hero.id}}</div>
+  <div class="mb-2"><span class="font-semibold">Comics disponibles:</span> {{hero.comics.available}}</div>
+  <div class="mb-4">
+    <img src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}" alt="{{hero.name}}" class="rounded-lg">
   </div>
-  <button type="button" (click)="goBack()">go back</button>
-  <button type="button" (click)="save()">save</button>
+  <div class="flex space-x-2">
+    <button type="button" class="bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded" (click)="goBack()">Go Back</button>
+    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded" (click)="save()">Save</button>
+  </div>
 </div>
