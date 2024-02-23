@@ -1,7 +1,7 @@
 <app-hero-search></app-hero-search>
 <h2 class="text-center text-3xl font-bold">Top Heroes</h2>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 container mx-auto p-5">
-  <a *ngFor="let hero of heroes" class="flex flex-col items-center bg-blue-500 rounded p-6 text-white text-center mb-4">
+  <a *ngFor="let hero of heroes" class="flex flex-col items-center bg-blue-500 rounded p-6 text-white text-center mb-4" routerLink="/detail/{{hero.id}}" >
     <img src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}" alt="" class="h-64 w-full object-cover mb-4 mx-auto">
     {{hero.name}}
   </a>
